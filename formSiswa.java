@@ -93,6 +93,7 @@ public void tampilData(String where) {
         buttonReset = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tableSiswa = new javax.swing.JTable();
+        buttonLogout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -158,6 +159,13 @@ public void tampilData(String where) {
         });
         jScrollPane2.setViewportView(tableSiswa);
 
+        buttonLogout.setText("Logout");
+        buttonLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLogoutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -194,7 +202,8 @@ public void tampilData(String where) {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(buttonUpdate)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(buttonReset)))))
+                                .addComponent(buttonReset))
+                            .addComponent(buttonLogout))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(18, Short.MAX_VALUE))
@@ -234,7 +243,9 @@ public void tampilData(String where) {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(buttonUpdate)
                             .addComponent(buttonReset))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(buttonLogout)
+                        .addGap(0, 2, Short.MAX_VALUE))
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -310,6 +321,11 @@ public void tampilData(String where) {
     e.printStackTrace();
   }
     }                                            
+
+    private void buttonLogoutActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        this.setVisible(false);
+        new formLogin().setVisible(true);
+    }                                            
     public void reset() {
     inputNama.setText("");
     inputJurusan.setSelectedIndex(0);
@@ -355,6 +371,7 @@ public void tampilData(String where) {
 
     // Variables declaration - do not modify                     
     private javax.swing.JButton buttonHapus;
+    private javax.swing.JButton buttonLogout;
     private javax.swing.JButton buttonReset;
     private javax.swing.JButton buttonSimpan;
     private javax.swing.JButton buttonUpdate;
